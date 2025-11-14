@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Leaflet marker styles */
+.aircraft-marker {
+  background: transparent !important;
+  border: none !important;
+}
+
+.leaflet-tooltip {
+  background-color: rgba(0, 0, 0, 0.8) !important;
+  border: none !important;
+  color: white !important;
+  font-weight: bold !important;
+  padding: 4px 8px !important;
+  border-radius: 4px !important;
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: 8px !important;
+}
+
+/* Smooth transitions */
+* {
+  transition-property: color, background-color, border-color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
