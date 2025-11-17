@@ -1,6 +1,6 @@
 'use client';
 
-import { MapContainer, TileLayer } from 'react-leaflet';
+import { MapContainer, TileLayer, ZoomControl } from 'react-leaflet';
 import { useAircraftStore } from '@/store/aircraftStore';
 import AircraftMarker from './AircraftMarker';
 
@@ -16,12 +16,14 @@ export default function Map() {
       center={[MAP_CENTER_LAT, MAP_CENTER_LNG]}
       zoom={MAP_ZOOM}
       style={{ height: '100vh', width: '100%' }}
-      zoomControl={true}
+      zoomControl={false}
     >
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
+
+      <ZoomControl position="bottomright" />
 
       {aircraft.map((plane) => (
         <AircraftMarker key={plane.callsign} aircraft={plane} />
